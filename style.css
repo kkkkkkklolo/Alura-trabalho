@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #1100ff;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.historia img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em 0;
+    border-radius: 8px;
+}
+
+.menu-oculto {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* Estilo para alto contraste */
+.alto-contraste {
+    background-color: black;
+    color: yellow;
+}
+
+.alto-contraste header {
+    background-color: #000;
+    color: yellow;
+}
+.alto-contraste .menu-oculto {
+    background-color: black;
+    border-color: yellow;
+}
