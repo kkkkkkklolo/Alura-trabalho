@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura - Homenagem ao MC Kevin</title>
+    
+    <!-- Link para os ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link para o Tailwind CSS CDN (para estilização rápida) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Estilos CSS embutidos na página para o modo de alto contraste -->
+    <style>
+        /*
+         * A classe 'alto-contraste' é adicionada ao <body> pelo JavaScript.
+         * Ela muda as cores para um contraste forte.
+         */
+        .alto-contraste {
+            background-color: black;
+            color: yellow;
+        }
+        .alto-contraste header {
+            background-color: black;
+            color: yellow;
+            border-bottom: 2px solid yellow; /* Adiciona uma borda para contraste */
+        }
+        .alto-contraste .shadow-lg {
+            box-shadow: 0 4px 6px -1px rgba(255, 255, 0, 0.1), 0 2px 4px -1px rgba(255, 255, 0, 0.06);
+        }
+        .alto-contraste .bg-white {
+            background-color: #000;
+        }
+        .alto-contraste .text-gray-900 {
+            color: yellow;
+        }
+        .alto-contraste .text-gray-700 {
+            color: #fff;
+        }
+        .alto-contraste .text-blue-600 {
+            color: yellow;
+        }
+        .alto-contraste footer {
+            background-color: black;
+            color: yellow;
+        }
+        .alto-contraste img {
+            filter: grayscale(100%); /* Converte a imagem para preto e branco */
+            border: 2px solid yellow; /* Adiciona uma borda para destacar a imagem */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-bold">Escola Alura</h1>
+        <!-- Botão para abrir o menu de acessibilidade -->
+        <button id="btnAcessibilidade" class="p-2 bg-white text-blue-600 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out">
+            <i class="fas fa-universal-access text-xl"></i>
+        </button>
+    </header>
+
+    <!-- Menu de acessibilidade que ficará oculto por padrão -->
+    <div id="menuAcessibilidade" class="hidden fixed top-20 right-4 p-4 bg-white rounded-lg shadow-xl z-50 transition-all duration-300 ease-in-out">
+        <p class="font-semibold text-gray-700 mb-2">Opções de Acessibilidade:</p>
+        <!-- Botão para ativar o alto contraste -->
+        <button id="btnAltoContraste" class="w-full p-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition duration-300 ease-in-out flex items-center justify-center">
+            <i class="fas fa-adjust mr-2"></i> Alto Contraste
+        </button>
+    </div>
+
+    <!-- Conteúdo principal da página -->
+    <main class="container mx-auto p-6 md:p-12">
+        <section class="bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-4xl font-extrabold text-gray-900 text-center mb-6">A História de MC Kevin</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
+                <!-- Imagem do MC Kevin com um placeholder -->
+                <img src="MC3.png" alt="" class="rounded-lg shadow-md w-full md:w-1/2 mb-4 md:mb-0">
+                <p class="text-gray-3000 text-lg leading-relaxed md:w-full">
+                    Nascido na Vila Ede, Zona Norte de São Paulo, MC Kevin, batizado como Kevin Nascimento Bueno, conquistou o Brasil com seu talento e carisma. Desde cedo, mostrou paixão pela música, transformando as experiências de sua vida em letras de funk que ressoaram com milhões de fãs. Sua trajetória é marcada por superação e um estilo autêntico que o tornou um dos maiores nomes do funk paulista.
+                </p>
+            </div>
+            
+            <div class="flex flex-col-reverse md:flex-row items-center md:space-x-8">
+                <p class="text-gray-3000 text-lg leading-relaxed md:w-1/2 mt-8 md:mt-0">
+                    Com hits como "Cavalo de Tróia", "Pra Inveja é Tchau" e "Doutora 3", Kevin acumulou uma legião de seguidores e milhões de visualizações em seus vídeos. Sua música não era apenas entretenimento, mas também uma forma de expressar a realidade e os sonhos de sua comunidade. Ele deixou um legado inegável na história do funk, influenciando uma nova geração de artistas e sendo lembrado por sua energia vibrante e sorriso contagiante.
+                </p>
+                <!-- Outra imagem do MC Kevin com um placeholder -->
+                <img src="mccc 1.jpeg" alt= mc kevin
+            
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="bg-gray-800 text-white p-4 text-center mt-8">
+        <p class="text-sm">&copy; 2025 Escola Alura. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript embutido para a lógica de acessibilidade -->
+    <script>
+        // Espera o documento ser completamente carregado antes de executar o código
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Seleciona os elementos da interface
+            const btnAcessibilidade = document.getElementById('btnAcessibilidade');
+            const menuAcessibilidade = document.getElementById('menuAcessibilidade');
+            const btnAltoContraste = document.getElementById('btnAltoContraste');
+            const body = document.body;
+
+            // Adiciona um evento de 'click' ao botão de acessibilidade
+            btnAcessibilidade.addEventListener('click', () => {
+                // Alterna a classe 'hidden' do Tailwind para mostrar ou esconder o menu
+                menuAcessibilidade.classList.toggle('hidden');
+            });
+
+            // Adiciona um evento de 'click' ao botão de alto contraste
+            btnAltoContraste.addEventListener('click', () => {
+                // Alterna a classe 'alto-contraste' no <body>
+                // Essa classe contém a estilização para o modo de alto contraste
+                body.classList.toggle('alto-contraste');
+            });
+        });
+    </script>
+</body>
+</html>
